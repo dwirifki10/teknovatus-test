@@ -7,13 +7,15 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <!-- Styles -->
         @include('layouts.partials.styles')
     </head>
     <body>
         <div id="app">
             @include('layouts.partials.sidebar')
-            
+
             <div id="main" class='layout-navbar'>
                 @include('layouts.partials.header')
                 <div id="main-content">
@@ -32,6 +34,5 @@
 
         <!-- Scripts -->
         @include('layouts.partials.scripts')
-
     </body>
 </html>

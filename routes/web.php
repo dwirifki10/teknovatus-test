@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ChartController;
+use App\Http\Controllers\Admin\DownloadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,19 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/", function () {
+    return view("auth.login");
 });
-Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-    Route::group(['prefix' => 'components', 'as' => 'components.'], function() {
-        Route::get('/alert', function () {
-            return view('admin.component.alert');
-        })->name('alert');
-        Route::get('/accordion', function () {
-            return view('admin.component.accordion');
-        })->name('accordion');
-    });
+Route::group(["middleware" => ["auth:sanctum", "verified"]], function() {
+    Route::get("/dashboard", [ChartController::class, "showChart"])->name("dashboard");
+    Route::get("/download", [DownloadController::class, "downloadClientFile"])->name("download");
+    Route::get("/notification", [DownloadController::class, "sendNotification"])->name("notification");
 });
