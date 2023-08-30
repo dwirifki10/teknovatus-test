@@ -36,13 +36,18 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     ```bash
     php artisan migrate --seed
     ```
+    
+6. Make symlink
+    ```bash
+    php artisan storage:link
+    ```
 
-6. Serve the application
+7. Serve the application
     ```bash
     php artisan serve
     ```
 
-7. Login credentials
+8. Login credentials
 
 **Email:** user@gmail.com
 
