@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Cloud Capacity Teknovatus</h4>
-                <a href="{{ route("download") }}" class="btn btn-primary float-end">Download Data Excel &nbsp;<i class="bi bi-cloud-download-fill"></i></a>
+                <a href="{{ route("download") }}" class="btn btn-primary btn-sm float-end">Download Data Excel &nbsp;<i class="bi bi-cloud-download-fill"></i></a>
             </div>
             <div class="card-body">
                 <canvas id="myChart"></canvas>
@@ -38,13 +38,10 @@ let dataMEM = [];
 let dataLabels = [];
 dataFromPHP.forEach((e) => {
     dataCPU.push(e.total_cpu);
-});
-dataFromPHP.forEach((e) => {
+    dataLabels.push(e.cluster_name);
     dataMEM.push(e.total_mem);
 });
-dataFromPHP.forEach((e) => {
-    dataLabels.push(e.cluster_name);
-});
+console.log(dataCPU, dataMEM, dataLabels); // only displayed in development process
 
 new Chart(ctx, {
     type: 'bar',
