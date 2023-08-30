@@ -6,12 +6,8 @@ use App\Exports\CloudExport;
 use App\Http\Controllers\Controller;
 use App\Mail\TeknovoMail;
 use Exception;
-use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
-
-// use Maatwebsite\Excel\Facades\Excel;
 
 
 class DownloadController extends Controller
