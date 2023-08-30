@@ -22,6 +22,8 @@ class CloudExport implements FromQuery, WithHeadings
 
     public function query()
     {
-        return DB::table('cloud_capacity')->get();
+        return DB::table('cloud_capacity')
+                ->select("cluster_id", "mem", "cpu", "is_active", "created_at", "updated_at")
+                ->orderBy("cluster_id");
     }
 }

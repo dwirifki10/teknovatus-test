@@ -11,14 +11,11 @@
 
     <section class="section">
         @if (session("success"))
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-secondary" role="alert">
+            <i class="bi bi-envelope-check-fill"></i>&nbsp;
             {{ session("success") }} &nbsp;<a href="#" class="alert-link">riyan.setiawan@teknovatus.com</a>. Silahkan check email kembali
         </div>
         @endif
-        <div class="alert alert-secondary" role="alert">
-            <i class="bi bi-envelope-check-fill"></i>&nbsp;
-            File berhasil dikirimkan ke alamat &nbsp;<a href="#" class="alert-link">riyan.setiawan@teknovatus.com</a>. Silahkan check email kembali
-        </div>
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Cloud Capacity Teknovatus</h4>
